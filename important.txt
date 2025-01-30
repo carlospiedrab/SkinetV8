@@ -1,0 +1,8 @@
+docker compose up -d       -- To create the image and launch
+
+
+
+dotnet ef migrations add InitialCreate -s API -p Infrastructure
+dotnet ef database update -s API -p Infrastructure
+
+
