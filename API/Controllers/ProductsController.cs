@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Threading.Tasks;
+using API.RequestHelpers;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController(IGenericRepository<Product> repo) : ControllerBase
+
+    public class ProductsController(IGenericRepository<Product> repo) : BaseApiController
     {
 
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts(
-            string? brand, string? type, string? sort)
+            [FromQuery]ProductSpecParams specParams)
         {
-            var spec = new ProductSpecification(brand, type, sort);
-            var products = await repo.ListAync(spec);
-            return Ok(products);
+            var spec = new ProductSpecification(specParams);
+            
+            return await CreatePagedResult(repo, spec, specParams.PageIndex, specParams.PageSize);
         }
 
         [HttpGet("{id:int}")]
