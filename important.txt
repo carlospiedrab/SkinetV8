@@ -8,3 +8,19 @@ dotnet ef database update -s API -p Infrastructure
 
 dotnet ef database drop -p Infrastructure -s API
 
+-- SSL
+install mkcert using choco cap 58
+
+ choco install mkcert
+ 
+mkdir ssl
+mkcert localhost
+
+change the angular.json
+   "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "ssl": true,
+            "sslCert": "ssl/localhost.pem",
+            "sslKey": "ssl/localhost-key.pem"
+          },
