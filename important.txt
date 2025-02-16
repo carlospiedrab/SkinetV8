@@ -24,3 +24,10 @@ change the angular.json
             "sslCert": "ssl/localhost.pem",
             "sslKey": "ssl/localhost-key.pem"
           },
+
+install tailwind css
+https://tailwindcss.com/docs/installation/framework-guides/angular
+
+
+-- To see the folders 
+settings --> Folder  uncheck Compact Folders          

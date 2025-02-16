@@ -1,0 +1,92 @@
+<!-- <header class="border-b shadow-md p-3 w-full">
+  <div class="flex align-middle items-center justify-between max-w-screen-2xl mx-auto">
+      <img src="/images/logo.png" alt="app logo" class="max-h-16">
+      <nav class="flex gap-3 my-2 uppercase text-xl">
+        <a>Home</a>
+        <a>Shop</a>
+        <a>Contact</a>
+      </nav>
+      <div class="flex gap-3 align-middle">
+        <a matBadge="5" matBadgeSize="large" class="custom-badge mt-2 mr-2">
+          <mat-icon>shopping_cart</mat-icon>
+        </a>
+        <button mat-stroked-button>Login</button>
+        <button mat-stroked-button>Login</button>
+      </div>
+  </div>
+</header> -->
+
+<!-- Example 2 -->
+
+<!-- <header class="border-b shadow-md p-3 w-full">
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div>
+          <img src="/images/logo.png" alt="app logo" class="max-h-16">
+        </div>
+        <ul ngClass="{'md:hidden bg-white space-y-2 p-4': isMenuOpen,
+                      'hidden md:flex space-x-4 items-center uppercase text-xl': !isMenuOpen}">
+          <a>Home</a>
+          <a>Shop</a>
+          <a>Contact</a>
+          <div class="flex gap-3 align-middle">
+            <a matBadge="5" matBadgeSize="large" class="custom-badge mt-2 mr-2">
+              <mat-icon>shopping_cart</mat-icon>
+            </a>
+            <button mat-stroked-button>Login</button>
+            <button mat-stroked-button>Login</button>
+          </div>
+        </ul>
+      </div>
+      <div class="md:hidden flex items-center">
+        <button (click)="toggleMenu()" class="text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+   @if (isMenuOpen) {
+    <div class="md:hidden bg-white space-y-2 p-4">
+      <a href="#" class="block text-gray-700 hover:text-blue-500">Home</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-500">Shop</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-500">Contact</a>
+      <div class="flex gap-3 align-middle">
+        <a matBadge="5" matBadgeSize="large" class="custom-badge mt-2 mr-2">
+          <mat-icon>shopping_cart</mat-icon>
+        </a>
+        <button mat-stroked-button>Login</button>
+        <button mat-stroked-button>Login</button>
+      </div>
+    </div>
+    }
+  </nav>
+
+</header> -->
+
+<header>
+  <nav class="bg-white p-4 shadow-md">
+    <div>
+      <img src="/images/logo.png" alt="app logo" class="max-h-16">
+    </div>
+    <div class="container mx-auto flex justify-between items-center text-blue-800">
+      <ul [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="lg:flex lg:items-center lg:space-x-6 hidden">
+        <li><a routerLink="/" class="px-3 py-2 rounded-md hover:bg-gray-700">Home</a></li>
+        <li><a routerLink="/services" class="px-3 py-2 rounded-md hover:bg-gray-700">Shop</a></li>
+        <li><a routerLink="/contact" class="px-3 py-2 rounded-md hover:bg-gray-700">Contact</a></li>
+        <li class="mt-2 ml-2">
+          <a matBadge="5" matBadgeSize="large" class="custom-badge">
+            <mat-icon>shopping_cart</mat-icon>
+          </a>
+        </li>
+      </ul>
+      <div>
+        <button class="mr-2" mat-stroked-button>Login</button>
+        <button mat-stroked-button>Login</button>
+      </div>
+      <button class="text-blue text-3xl lg:hidden mr-2" (click)="toggleMenu()">&#9776;</button>
+    </div>
+  </nav>
+</header>
